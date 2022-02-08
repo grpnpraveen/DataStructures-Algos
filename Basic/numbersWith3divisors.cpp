@@ -67,11 +67,11 @@ void seive(vector<long long>&isprime,vector<long long>&primes){
         
         return v;
     }
-int main(int argc,char** argv[])
+int main()
 {
      int q=1;
       vector<long long> query;
-      query.push_back(1000000000000);
+      query.push_back(7);
         vector<int> R= threeDivisors(query,1);
         for(auto x: R)
         {
