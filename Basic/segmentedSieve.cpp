@@ -85,7 +85,7 @@ void segsieve(int l,int h)
 int main(int argc,char** argv[])
 {
 
-     segsieve(1,25); // not for primes in sqrt(h) in range of l to h
+     segsieve(1,25); 
     
     cout<<"\n";
     return 0 ;
