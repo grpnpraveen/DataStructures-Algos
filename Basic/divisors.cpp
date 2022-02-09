@@ -28,12 +28,42 @@
 
 using namespace std;
 
-
+void   printdivisorsInorder(int n)
+{
+    int i;
+    for( i=1;i*i<=n;i++)
+    {
+        if(n%i == 0)
+        {
+            cout<<i<<" ";
+        }
+    }
+    for(;i>=1;i--)
+    {
+        if(n%i ==0)
+        {
+            cout<<n/i<<" ";
+        }
+    }
+}
+void   printdivisors(int n)
+{
+    int i;
+    for( i=1;i*i<=n;i++)
+    {
+        if(n%i == 0)
+        {
+            cout<<i<<" "<<n/i<<" ";
+            
+        }
+    }
+}
 int main(int argc,char** argv[])
 {
 
-     //test
-    
+   printdivisorsInorder(60);
+    cout<<"\n";
+   printdivisors(60);
     cout<<"\n";
     return 0 ;
 }

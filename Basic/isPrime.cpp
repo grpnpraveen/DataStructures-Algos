@@ -48,7 +48,7 @@ using namespace std;
 int main(int argc,char** argv[])
 {
 
-     cout<<isPrime(15);
+     cout<<isPrime(7);
     
     cout<<"\n";
     return 0 ;

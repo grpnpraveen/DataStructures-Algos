@@ -43,7 +43,7 @@ void sieve(int n){
                 isPrime[j]=false;
             }
         }
-        }
+    }
 }
 
 void segsieve(int l,int h)
@@ -85,7 +85,7 @@ void segsieve(int l,int h)
 int main(int argc,char** argv[])
 {
 
-     segsieve(1,25); 
+     segsieve(7,20); 
     
     cout<<"\n";
     return 0 ;
