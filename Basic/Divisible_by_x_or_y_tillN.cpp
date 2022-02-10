@@ -28,19 +28,15 @@
 
 using namespace std;
 
-
-void printSubarray(int arr[],int n)
+int till(int n,int x,int y)
 {
-for(int i=0;i<n;i++)
-{
-    cout<<arr[i]<<" ";
-}
+    return n/x + n/y - n/(x*y);   // inclusive Exclusive principle
 }
 int main(int argc,char** argv[])
 {
 
-     int arr[]={1,2,3};
-         printSubarray(arr,3);
+   cout<<till(1000,3,4);
+    
     cout<<"\n";
     return 0 ;
 }

@@ -29,18 +29,38 @@
 using namespace std;
 
 
-void printSubarray(int arr[],int n)
+int dearrangementCount(int n)
 {
-for(int i=0;i<n;i++)
+    if(n==1 || n==2)\
+        return n-1;
+    else
+        return n-1 *(dearrangementCount(n-1) + dearrangementCount(n-2));
+}
+
+
+int dearrangementCountIterative(int n)
 {
-    cout<<arr[i]<<" ";
+    if(n==1 || n==2)
+        return n-1;
+    int a=0;
+    int b=1;
+    int c;
+    for(int i=3;i<=n;i++)
+    {
+        c=(i-1) *(a+b);
+        a=b;
+        b=c;
+    }
+    return c;
 }
-}
+
 int main(int argc,char** argv[])
 {
 
-     int arr[]={1,2,3};
-         printSubarray(arr,3);
+   cout<<dearrangementCount(3);
+    cout<<"\n";
+   cout<<dearrangementCountIterative(3);
+    
     cout<<"\n";
     return 0 ;
 }
