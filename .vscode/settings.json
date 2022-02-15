@@ -1,6 +1,15 @@
 {
     "files.associations": {
         "unordered_set": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "cmath": "cpp"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
     }
 }
