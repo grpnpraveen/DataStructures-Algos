@@ -84,11 +84,12 @@
 "dsa default custom snippet": {
   "prefix": "dsa",
   "body": [
+    "#define _USE_MATH_DEFINES ",
     "#include<iostream>",
     "#include <algorithm>",
     "#include<sstream>",
     "#include<iomanip>",
-    "#include<math.h>",
+    "#include<cmath>",
     "#include<string>   // it has getline(cin,var)",
     "#include<sstream>",
     "//stl containers",
@@ -156,11 +157,12 @@
 "testing custom snippet": {
   "prefix": "test",
   "body": [
+    "#define _USE_MATH_DEFINES ",
     "#include<iostream>",
     "#include <algorithm>",
     "#include<sstream>",
     "#include<iomanip>",
-    "#include<math.h>",
+    "#include<cmath>",
     "#include<string>   // it has getline(cin,var)",
     "#include<sstream>",
     "//stl containers",
@@ -196,5 +198,66 @@
     "}"
   ],
   "description": "testing custom snippet"
+},
+"real dsa default custom snippet": {
+  "prefix": "realdsa",
+  "body": [
+    "#include<bits/stdc++.h>",
+    "",
+    "using namespace std;",
+    "",
+    "int main(int argc,char** argv[])",
+    "{",
+    "    ",
+    "    ios_base::sync_with_stdio(false);",
+    "    cin.tie(NULL);",
+    "    int T;",
+    "    freopen(\"input.txt\",\"r\",stdin);",
+    "    cin>>T;",
+    "    while(T--)",
+    "    {",
+    "        ${1:    // logic}",
+    "",
+    "",
+    "    };",
+    "    cout<<\"\\n\";",
+    "    fclose(stdin);",
+    "    return 0 ;",
+    "}"
+  ],
+  "description": "real dsa default custom snippet"
+},
+"only headers dsa default custom snippet": {
+  "prefix": "headersonly",
+  "body": [
+    "#define _USE_MATH_DEFINES ",
+    "#include<iostream>",
+    "#include <algorithm>",
+    "#include<sstream>",
+    "#include<iomanip>",
+    "#include<cmath>",
+    "#include<string>   // it has getline(cin,var)",
+    "#include<sstream>",
+    "//stl containers",
+    "#include<array>",
+    "#include<vector>",
+    "#include<stack>",
+    "#include<queue>",
+    "#include<deque>",
+    "#include<map>",
+    "#include<unordered_map>",
+    "#include<set>",
+    "#include<unordered_set>",
+    "#include<list>",
+    "#include<forward_list>",
+    "// #include<thread>",
+    "// #include<chrono>",
+    "#include<any>",
+    "#define to_Str(X) #X",
+    "#define glue(a,b) a##b  // ",
+    "// #include<bits/stdc++.h>    # not working in msvc",
+
+  ],
+  "description": "only headers real dsa default custom snippet"
 }
 }

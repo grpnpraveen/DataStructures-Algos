@@ -2,7 +2,12 @@
     "files.associations": {
         "unordered_set": "cpp",
         "memory": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "xlocmon": "cpp",
+        "xiosbase": "cpp",
+        "vector": "cpp",
+        "map": "cpp",
+        "queue": "cpp"
     },
     "files.exclude": {
         "**/.git": true,
