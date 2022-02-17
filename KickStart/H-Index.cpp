@@ -4,130 +4,60 @@
 // Input
 // The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a line containing N, the number of papers Jorge wrote. The second line contains N integers. The i-th integer is Ci, the number of citations that the i-th paper has.
 
-#define _USE_MATH_DEFINES 
-#include<iostream>
-#include <algorithm>
-#include<sstream>
-#include<iomanip>
-#include<cmath>
-#include<string>   // it has getline(cin,var)
-#include<sstream>
-//stl containers
-#include<array>
-#include<vector>
-#include<stack>
-#include<queue>
-#include<deque>
-#include<map>
-#include<unordered_map>
-#include<set>
-#include<unordered_set>
-#include<list>
-#include<forward_list>
-// #include<thread>
-// #include<chrono>
-#include<any>
-#define to_Str(X) #X
-#define glue(a,b) a##b  // 
-// #include<bits/stdc++.h>    # not working in msvc
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
 
 
 using namespace std;
 
 #pragma region //efficient solution
-vector<int> GetHIndexScore(vector<int> citations_per_paper) 
-{
-  vector<int> h_index;
- 
-    for(int i=1;i<=citations_per_paper.size();i++)
-    {
-        if(i==1 && citations_per_paper[i-1]>=1)
-        {
-            h_index.push_back(1);
-        }
-        else
-        {
-            int b=i;
-            while(citations_per_paper[b-1]>=i)
-            {
-                if((b-1) ==0)
-                {
-                    h_index.push_back(i);
-                }
 
-                if(b!=0)
-                    b--;
-            }
-            if(h_index.size()!=i)
-            {
-                b=i-1;
-                if(citations_per_paper[b]>=b)
-                {
-                    if((h_index[b-1]+1) != b+1)
-                    {
-                        h_index.push_back(h_index[b-1]+1);
-                    }
-                    else
-                    {
-                        h_index.push_back(h_index[b-1]);
-                    }
-                }
-                else{
-                     h_index.push_back(h_index[b-1]);
-                }
-            }
-        }
-    }
-
-  return h_index;
-}
-
-vector<int> h_index(vector<int> citations_per_paper)
-{
-    int ans =0;
-    vector<int> h;
-    priority_queue<int, vector<int>, greater<int>> q;
-        for(int i=0; i<citations_per_paper.size(); i++)
-        {
-            while(q.empty()==false && q.top()<=ans)
-            {
-                q.pop();
-            }
-            if(q.size()==ans+1)
-                ans++;
-            
-            h.push_back(ans);
-        }
-    return h;
-}
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    freopen("input.txt","r",stdin);
-    int tests;
-    cin >> tests;
-    for (int test_case = 1; test_case <= tests; test_case++) 
+    cout.tie(NULL);
+    
+    ll t, n, i, j, ans, si;
+ 
+    cin>>t;
+    
+    for(j=1; j<=t; j++)
     {
-        // Get number of papers for this test case
-        int paper_count;
-        cin >> paper_count;
-        // Get number of citations for each paper
-        vector<int> citations(paper_count);
-        for (int i = 0; i < paper_count; i++) 
+        cin>>n;
+        ll a[n];
+        ans=0;
+        si=0;
+        priority_queue<ll, vector<ll>, greater<ll>> q;
+        for(i=0; i<n; i++)
         {
-            cin >> citations[i];
+            cin>>a[i];
         }
-        vector<int> answer = h_index(citations);
-        cout << "Case #" << test_case << ": ";
-        for (int i = 0; i < answer.size(); i++)
+        
+        cout<<"Case #"<<j<<": ";
+        
+        for(i=0; i<n; i++)
         {
-            cout << answer[i] << " ";
+            while(q.empty()==false && q.top()<=ans)
+            {
+                q.pop();
+                si--;
+            }
+            if(a[i]>ans)
+            {
+            q.push(a[i]);
+            si++;
+            }
+            if(si==ans+1)
+            {
+                ans++;
+            }
+            cout<<ans<<" ";
         }
-        cout << endl;
+        cout<<"\n";
     }
-      fclose(stdin);
-  return 0;
+
 }
 #pragma endregion
 
