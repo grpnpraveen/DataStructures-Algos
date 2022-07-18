@@ -75,10 +75,10 @@ void primefactors(int n)
         res.push_back(n);
 }
 
-int main(int argc,char** argv[])
+int main()
 {
 
-     primefactors(49);
+     primefactors(9);
      for(auto x: res)
      {
          cout<<x<<" ";
